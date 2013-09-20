@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+gem 'coveralls'
+gem 'minitest'
+gem 'multi_json'
+gem 'rake'
+gem 'rack-test'
+gem 'sinatra'
+gem 'slim'
+gem 'sys-proctable'

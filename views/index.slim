@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title PSMON
+    link href="/css/bootstrap.min.css" type="text/css" rel="stylesheet"
+    script src="/js/jquery-1.10.2.min.js" type="text/javascript"
+    script src="/js/psmon.js" type="text/javascript"
+  body
+    .container
+      .row
+        .span12
+          .page-header
+            h1 Process list
+          table.table.table-stricted
+            thead
+              tr
+                th PID
+                th COMMAND
+            tbody
+              - @process_list.each do |process|
+                tr
+                  td= process.pid
+                  td= process.cmdline
+                  td
+                    button.btn.destroy data-pid="#{process.pid}" Kill
