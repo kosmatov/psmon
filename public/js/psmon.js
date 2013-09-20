@@ -4,7 +4,7 @@
 
     $('button.destroy').on('click', function() {
       var _button = $(this);
-  console.log(_button)
+
       $.ajax({
         url: '/',
         method: 'delete',
