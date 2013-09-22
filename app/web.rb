@@ -15,9 +15,12 @@ module App
 
     delete '/' do
       pid = params[:pid].to_i
-      if pid > 0 && Process.kill('QUIT', pid)
+      begin
+        Process.kill('QUIT', pid)
         status 200
-      else
+      rescue Errno::EPERM
+        status 403
+      rescue
         status 404
       end
     end

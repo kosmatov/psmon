@@ -13,7 +13,12 @@
           _button.closest('tr').fadeOut(function() {
             $(this).remove();
           });
-        } 
+        },
+        statusCode: {
+          403: function() {
+            _button.replaceWith('<span class="muted">Not permitted</span>');
+          }
+        }
       });
     });
   });
